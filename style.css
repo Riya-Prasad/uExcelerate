@@ -43,13 +43,12 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  max-width: 640px;
   margin: 0 auto;
 }
 
 /* utilities */
 .container {
-  max-width: 640px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 15px 48px;
 }
@@ -96,11 +95,8 @@ body {
 }
 
 .coach {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
   gap: 42px;
-  justify-content: center;
-  align-items: center;
   height: 100%;
 }
 
@@ -116,6 +112,10 @@ body {
   position: relative;
   height: 150px;
   width: 150px;
+}
+
+.coach-img img {
+  object-fit: contain;
 }
 
 .coach-info .coach-name {
@@ -220,4 +220,31 @@ body {
   background-clip: text;
   text-fill-color: transparent;
   border-bottom: 0.5px solid #ff2779;
+}
+
+@media only screen and (max-width: 580px) {
+  .coach {
+    gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .coach {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .coach {
+    align-items: center;
+  }
+  .coach-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-end-desc{
+    margin-top: 50px;
+  }
 }
